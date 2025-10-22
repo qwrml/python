@@ -12,17 +12,10 @@ def test_calculator():
     delay_input.clear()
     delay_input.send_keys("45")
         
-    buttons = driver.find_elements(By.CSS_SELECTOR, ".btn-outline-primary")
-        
-    for button in buttons:
-        if button.text == "7":
-            button.click()
-        elif button.text == "+":
-            button.click()  
-        elif button.text == "8":
-            button.click()
-        elif button.text == "=":
-            button.click()
+    driver.find_element(By.XPATH, "//span[text()='7']").click()
+    driver.find_element(By.XPATH, "//span[text()='+']").click()  
+    driver.find_element(By.XPATH, "//span[text()='8']").click()
+    driver.find_element(By.XPATH, "//span[text()='=']").click()
         
     wait = WebDriverWait(driver, 46)
     result = wait.until(
